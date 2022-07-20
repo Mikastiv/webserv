@@ -6,7 +6,7 @@
 /*   By: mafortin <mafortin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:17:01 by mafortin          #+#    #+#             */
-/*   Updated: 2022/07/06 13:18:11 by mafortin         ###   ########.fr       */
+/*   Updated: 2022/07/20 16:24:19 by mafortin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ const uploadFile = () => {
 			body: data
 		}).then(response => {
 			if (!response.ok){
+				console.log("Response is not ok");
 				return response.text();
 			}
 			else{
@@ -73,8 +74,8 @@ const uploadFile = () => {
 				return "OK";
 			}
 		}).then(content =>{
-			if (content != "OK")
-				document.write(content)
+			if (content != "OK"){}
+				document.write(content);
 		}).catch(e => alert(e.message));
 	}
 }
